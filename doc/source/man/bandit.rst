@@ -7,7 +7,7 @@ SYNOPSIS
 
 bandit [-h] [-r] [-a {file,vuln}] [-n CONTEXT_LINES] [-c CONFIG_FILE]
             [-p PROFILE] [-t TESTS] [-s SKIPS] [-l] [-i]
-            [-f {csv,custom,html,json,screen,txt,xml,yaml}]
+            [-f {csv,custom,html,json,sarif,screen,txt,xml,yaml}]
             [--msg-template MSG_TEMPLATE] [-o [OUTPUT_FILE]] [-v] [-d] [-q]
             [--ignore-nosec] [-x EXCLUDED_PATHS] [-b BASELINE]
             [--ini INI_PATH] [--exit-zero] [--version]
@@ -27,8 +27,8 @@ OPTIONS
   -h, --help            show this help message and exit
   -r, --recursive       find and process files in subdirectories
   -a {file,vuln}, --aggregate {file,vuln}
-                        aggregate output by vulnerability (default) or by
-                        filename
+                        aggregate output by filename (default) or by
+                        vulnerability
   -n CONTEXT_LINES, --number CONTEXT_LINES
                         maximum number of code lines to output for each issue
   -c CONFIG_FILE, --configfile CONFIG_FILE
@@ -42,13 +42,13 @@ OPTIONS
                         comma-separated list of test IDs to skip
   -l, --level           report only issues of a given severity level or higher
                         (-l for LOW, -ll for MEDIUM, -lll for HIGH)
-  -l, --severity-level={all,high,medium,low}
+  --severity-level={all,high,medium,low}
                         report only issues of a given severity level or higher.
                         "all" and "low" are likely to produce the same results, but it
                         is possible for rules to be undefined which will not be listed in "low".
   -i, --confidence      report only issues of a given confidence level or
                         higher (-i for LOW, -ii for MEDIUM, -iii for HIGH)
-  -l, --confidence-level={all,high,medium,low}
+  --confidence-level={all,high,medium,low}
                         report only issues of a given confidence level or higher.
                         "all" and "low" are likely to produce the same results, but it
                         is possible for rules to be undefined which will not be listed in "low".

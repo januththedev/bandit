@@ -181,7 +181,7 @@ def main():
         default="file",
         type=str,
         choices=["file", "vuln"],
-        help="aggregate output by vulnerability (default) or by filename",
+        help="aggregate output by filename (default) or by vulnerability",
     )
     parser.add_argument(
         "-n",
